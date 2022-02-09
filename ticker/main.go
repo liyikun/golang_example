@@ -25,4 +25,17 @@ func main() {
 
 	done <- true
 	fmt.Println("finish")
+
+	i := 0
+
+	for v := range time.Tick(time.Second) {
+		if i < 10 {
+			fmt.Println(i)
+			fmt.Println(v)
+			i++
+		} else {
+			fmt.Println("finish")
+			return
+		}
+	}
 }
